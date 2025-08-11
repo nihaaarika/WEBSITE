@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reviews</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f9fa;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #444;
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        input, textarea, select, button {
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+        }
+        button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #45a049;
+        }
+        body {
+    background: linear-gradient(to right, #f5f7fa, #c3cfe2);
+    font-family: Arial, sans-serif;
+}
+
+/* Reviews container */
+.reviews-section {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: auto;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Review card */
+.review-card {
+    background: #fdfdfd;
+    border-left: 5px solid #4cafef;
+    margin: 15px 0;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.review-card:hover {
+    transform: translateY(-3px);
+}
+
+/* Reviewer name */
+.review-card strong {
+    font-size: 1.2em;
+    color: #333;
+}
+
+/* Review text */
+.review-card p {
+    font-size: 1em;
+    color: #555;
+    font-style: italic;
+}
+
+/* Star rating */
+.stars {
+    color: gold;
+    font-size: 1.2em;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.6);
+}
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Reviews</h2>
+    <form id="reviewForm">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <select id="rating" required>
+            <option value="">Select Rating</option>
+            <option value="⭐">⭐</option>
+            <option value="⭐⭐">⭐⭐</option>
+            <option value="⭐⭐⭐">⭐⭐⭐</option>
+            <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+            <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+        </select>
+        <textarea id="review" placeholder="Write your review..." required></textarea>
+        <button type="submit">Submit Review</button>
+    </form>
+
+    <div id="reviewsList"></div>
+</div>
+
+<script>
+document.getElementById("reviewForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+    
+    let name = document.getElementById("name").value;
+    let rating = document.getElementById("rating").value;
+    let review = document.getElementById("review").value;
+
+    let reviewCard = document.createElement("div");
+    reviewCard.classList.add("review-card");
+    reviewCard.innerHTML = `<strong>${name}</strong> <span class="stars">${rating}</span><p>${review}</p>`;
+
+    document.getElementById("reviewsList").prepend(reviewCard);
+
+    this.reset();
+});
+</script>
+
+</body>
+</html>

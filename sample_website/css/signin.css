@@ -1,0 +1,53 @@
+/* Sign-In / Sign-Up Page Styles */
+.signin-container body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.signin-container {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 350px;
+    box-shadow: 0px 4px 20px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.signin-container h2 {
+    margin-bottom: 20px;
+}
+
+.signin-container input {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+
+.signin-container button {
+    width: 100%;
+    padding: 10px;
+    background: #2575fc;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.signin-container button:hover {
+    background: #1a5fd3;
+}
+
+.signin-container a {
+    display: block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #2575fc;
+}
